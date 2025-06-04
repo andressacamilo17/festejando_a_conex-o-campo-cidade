@@ -1,12 +1,32 @@
-.cabecalho{
-    background-color: rgb(74, 153, 42);
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #7ec850, #7fd14d, #82dd4a);
+    color: #2e2e2e;
+    line-height: 1.5;
+    user-select: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-padding-top: 60px; 
+
+  }.cabecalho{
+    background: linear-gradient(135deg, #7ec850, #7fd14d, #82dd4a);
 }
-.logo_do_colegio{
-margin: 5px;
-}
-.logo_do_alura{
+
+.cabecalho-logo_do_colegio{
+margin: 2px;
+height: 155px;
 
 }
+
+.cabecalho-logo_do_alura{
+height: 155px;
+margin: 5px;
+width: 25;
+border-radius: 12px;
+}
+
 .cabecalho-colegio{
     margin: 15px;
 }
