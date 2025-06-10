@@ -1,32 +1,222 @@
+/* Base and typography */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap');
+
+:root {
+  --green-dark: #22543d;
+  --green-primary: #2f855a;
+  --green-light: #a7f3d0;
+  --gray-dark: #1a202c;
+  --gray-medium: #4a5568;
+  --gray-light: #e6fffa;
+  --shadow-light: rgba(32, 129, 108, 0.12);
+  --shadow-strong: rgba(32, 129, 108, 0.24);
+  --bg-white: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #7ec850, #7fd14d, #82dd4a);
-    color: #2e2e2e;
-    line-height: 1.5;
-    user-select: none;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    scroll-padding-top: 60px; 
-
-  }.cabecalho{
-    background: linear-gradient(135deg, #7ec850, #7fd14d, #82dd4a);
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-white);
+  color: var(--gray-medium);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.cabecalho-logo_do_colegio{
-margin: 2px;
-height: 155px;
-
+a {
+  color: var(--green-primary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover,
+a:focus {
+  color: var(--green-dark);
+  outline: none;
 }
 
-.cabecalho-logo_do_alura{
-height: 155px;
-margin: 5px;
-width: 25;
-border-radius: 12px;
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
 }
 
-.cabecalho-colegio{
-    margin: 15px;
+header {
+  position: sticky;
+  top: 0;
+  background: var(--bg-white);
+  box-shadow: 0 3px 8px var(--shadow-light);
+  z-index: 1000;
+  padding: 1rem 0;
 }
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logo-left,
+.logo-right {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;
+}
+
+.logo-left img,
+.logo-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 1px rgba(32, 129, 108, 0.35));
+}
+
+.header-text {
+  flex-grow: 1;
+  text-align: center;
+  user-select: none;
+  color: var(--green-dark);
+}
+
+.header-text h1 {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+
+.header-text p {
+  margin: 0.25rem 0 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.header-text .subtitle {
+  font-weight: 400;
+  font-size: 1rem;
+  font-style: italic;
+  color: var(--green-primary);
+  letter-spacing: 0.03em;
+}
+
+main {
+  padding: 3rem 0 5rem;
+  min-height: 85vh;
+}
+
+.map-container {
+  max-width: 100%;
+  height: 430px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px var(--shadow-strong);
+  overflow: hidden;
+  margin-bottom: 3rem;
+  background-color: var(--gray-light);
+  cursor: grab;
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.map-container:focus-within,
+.map-container:hover {
+  box-shadow: 0 8px 25px var(--shadow-strong);
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.recipes-section {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recipes-section h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.recipe-card {
+  background: var(--gray-light);
+  border-radius: 12px;
+  padding: 1.3rem 1.8rem;
+  margin-bottom: 1.75rem;
+  box-shadow: 0 4px 14px var(--shadow-light);
+  transition: 
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.recipe-card:hover,
+.recipe-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 26px rgba(34, 84, 61, 0.35);
+  outline: none;
+}
+
+.recipe-card h3 {
+  margin: 0 0 0.65rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  font-size: 1.25rem;
+}
+
+.recipe-card p {
+  margin: 0 0 1em;
+  color: var(--gray-medium);
+  font-size: 1rem;
+}
+
+.recipe-card a {
+  font-weight: 600;
+  color: var(--green-primary);
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.recipe-card a:hover,
+.recipe-card a:focus {
+  color: var(--green-dark);
+  text-decoration: underline;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px; 
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px); 
+  white-space: nowrap; /* added line */
+}
+
+/* Responsive */
+@media (max-width: 720px) {
+  .header-content {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .header-text h1 {
+    font-size: 1.35rem;
+  }
+  .header-text p,
+  .header-text .subtitle {
+    font-size: 1rem;
+  }
+  .logo-left, .logo-right {
+    width: 56px;
+    height: 56px;
+  }
+}
+
